@@ -1,9 +1,7 @@
 <div id="path" style="display:none;">
     {php}
-    $dir = dirname(__FILE__);
+    $dir = realpath(__DIR__ . '/../../../../ext/com.groupwho.paperlesstrans/profiles');
     echo $dir;
-    echo "\n";
-    echo $_SERVER['DOCUMENT_ROOT'];
     {/php}
 </div>
 {literal}
@@ -75,11 +73,28 @@ $(document).ready(function ()
         mode = $('.no-popup strong').html();
         residence = $("#path").html();
         residence = residence.trim();
-        residence = residence.split('\n');
-        residence[0] = residence[0].split(residence[1]);
-        residence[0][1] = residence[0][1].split('civicrm');
-        residence[0][1][1] = 'civicrm/ext/com.groupwho.paperlesstrans/profiles';
-        residence = residence[0][1][0].concat(residence[0][1][1]);
+        joomla_1 = residence.split('/media');
+        drupal_1 = residence.split('/sites');
+        wordpress_1 = residence.split('/wp-content');
+        if (joomla_1[1])
+        {
+            server_root = joomla_1[0].split('\/');
+            server = server_root[server_root.length-1];
+            final_residence = "/" + server + "/media" +joomla_1[1];           
+        }
+        if (drupal_1[1])
+        {
+            server_root = drupal_1[0].split('\/');
+            server = server_root[server_root.length-1];
+            final_residence = "/" + server + "/sites" +drupal_1[1];           
+        }
+        if (wordpress_1[1])
+        {
+            server_root = wordpress_1[0].split('\/');
+            server = server_root[server_root.length-1];
+            final_residence = "/" + server + "/wp-content" +wordpress_1[1];           
+        }
+        residence = final_residence;
         
         state_id = $('.select2-choice')[1]['childNodes'][1]['id'];
         state_value = $('#' +state_id).html();
