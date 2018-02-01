@@ -72,9 +72,11 @@ Some issues may be related to core CiviCRM issues, and may not have an immediate
 
 Limitations of using future date feature:
 
+* The future date feature on the CiviCRM can run on Drupal, Joomla and WordPress only.
 * The Paperless Transactions' Payment Processor cannot be used along with other Payment Processors on a Contribution Page for "future transactions" specifically.
 * CiviCRM is limited to add 2 or less Paperless Transactions' Payment Processors (Credit Card and ACH/EFT only) for better results for "future transactions".
 * Custom fields are not passed into the future date feature on the Contribution Page. For any modification to the Contribution Page's front end layout or form fields, please reach out to us at mhussain@paperlesstrans.com and we'll send you an email with those features to add into your form.
+
 
 Please post an issue to the github repository if you have any questions.
 
