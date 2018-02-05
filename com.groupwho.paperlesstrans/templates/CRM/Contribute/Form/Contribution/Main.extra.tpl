@@ -73,27 +73,34 @@ $(document).ready(function ()
         mode = $('.no-popup strong').html();
         residence = $("#path").html();
         residence = residence.trim();
-        joomla_1 = residence.split('/media');
-        drupal_1 = residence.split('/sites');
-        wordpress_1 = residence.split('/wp-content');
+		forward = residence.includes("\/");
+		if(forward == true)
+		{var slash = "\/";}
+		else if (forward == false)
+		{var slash = "\\";}
+		console.log(slash);
+        joomla_1 = residence.split(slash + 'media');
+        drupal_1 = residence.split(slash + 'sites');
+        wordpress_1 = residence.split(slash + 'wp-content');
         if (joomla_1[1])
         {
-            server_root = joomla_1[0].split('\/');
+            server_root = joomla_1[0].split(slash);
             server = server_root[server_root.length-1];
-            final_residence = "/" + server + "/media" +joomla_1[1];           
+            final_residence = slash + server + slash + "media" +joomla_1[1] + slash;           
         }
         if (drupal_1[1])
         {
-            server_root = drupal_1[0].split('\/');
+            server_root = drupal_1[0].split(slash);
             server = server_root[server_root.length-1];
-            final_residence = "/" + server + "/sites" +drupal_1[1];           
+            final_residence = slash + server + slash + "sites" +drupal_1[1] + slash;           
         }
         if (wordpress_1[1])
         {
-            server_root = wordpress_1[0].split('\/');
+            server_root = wordpress_1[0].split(slash);
             server = server_root[server_root.length-1];
-            final_residence = "/" + server + "/wp-content" +wordpress_1[1];           
+            final_residence = slash + server + slash + "wp-content" +wordpress_1[1] + slash;           
         }
+		console.log(final_residence);
         residence = final_residence;
         
         state_id = $('.select2-choice')[1]['childNodes'][1]['id'];
@@ -385,7 +392,7 @@ $(document).ready(function ()
                                         }
                                         $.ajax({
                                             type: "POST",
-                                            url: residence + '/CardRecurringProfile.php',
+                                            url: residence + 'CardRecurringProfile.php',
                                             data: {
                                                 type: "Card",
                                                 dateFirst: dateFirst,
@@ -445,7 +452,7 @@ $(document).ready(function ()
                                         
                                         $.ajax({
                                             type: "POST",
-                                            url: residence + '/CheckRecurringProfile.php',
+                                            url: residence + 'CheckRecurringProfile.php',
                                             data: {
                                                 type: "Check",
                                                 dateFirst: dateFirst,
@@ -551,7 +558,7 @@ $(document).ready(function ()
                                                 
                                                 $.ajax({
                                                     type: "POST",
-                                                    url: residence + '/CardProfile.php',
+                                                    url: residence + 'CardProfile.php',
                                                     data: {
                                                         type: "Card",
                                                         date: date_Future,
@@ -607,7 +614,7 @@ $(document).ready(function ()
                                                 }
                                                 $.ajax({
                                                     type: "POST",
-                                                    url: residence + '/CheckProfile.php',
+                                                    url: residence + 'CheckProfile.php',
                                                     data: {
                                                         type: "Check",
                                                         date: date_Future,
@@ -766,7 +773,7 @@ $(document).ready(function ()
                                             }
                                         $.ajax({
                                             type: "POST",
-                                            url: residence + '/CardRecurringProfile.php',
+                                            url: residence + 'CardRecurringProfile.php',
                                             data: {
                                                 type: "Card",
                                                 dateFirst: dateFirst,
@@ -825,7 +832,7 @@ $(document).ready(function ()
                                         }
                                         $.ajax({
                                             type: "POST",
-                                            url: residence + '/CheckRecurringProfile.php',
+                                            url: residence + 'CheckRecurringProfile.php',
                                             data: {
                                                 type: "Check",
                                                 dateFirst: dateFirst,
@@ -932,7 +939,7 @@ $(document).ready(function ()
                                             }
                                             $.ajax({
                                                 type: "POST",
-                                                url: residence + '/CheckProfile.php',
+                                                url: residence + 'CheckProfile.php',
                                                 data: {
                                                     type: "Check",
                                                     date: date_Future,
@@ -989,7 +996,7 @@ $(document).ready(function ()
                                             }
                                             $.ajax({
                                                 type: "POST",
-                                                url: residence + '/CardProfile.php',
+                                                url: residence + 'CardProfile.php',
                                                 data: {
                                                     type: "Card",
                                                     date: date_Future,
@@ -1163,7 +1170,7 @@ $(document).ready(function ()
                                         }
                                         $.ajax({
                                             type: "POST",
-                                            url: residence + '/CardRecurringProfile.php',
+                                            url: residence + 'CardRecurringProfile.php',
                                             data: {
                                                 type: "Card",
                                                 dateFirst: dateFirst,
@@ -1224,7 +1231,7 @@ $(document).ready(function ()
                                         }
                                         $.ajax({
                                             type: "POST",
-                                            url: residence + '/CheckRecurringProfile.php',
+                                            url: residence + 'CheckRecurringProfile.php',
                                             data: {
                                                 type: "Check",
                                                 dateFirst: dateFirst,
@@ -1332,7 +1339,7 @@ $(document).ready(function ()
                                                 }
                                                 $.ajax({
                                                     type: "POST",
-                                                    url: residence + '/CardProfile.php',
+                                                    url: residence + 'CardProfile.php',
                                                     data: {
                                                         type: "Card",
                                                         date: date_Future,
@@ -1387,7 +1394,7 @@ $(document).ready(function ()
                                                 }
                                                 $.ajax({
                                                     type: "POST",
-                                                    url: residence + '/CheckProfile.php',
+                                                    url: residence + 'CheckProfile.php',
                                                     data: {
                                                         type: "Check",
                                                         date: date_Future,
@@ -1544,7 +1551,7 @@ $(document).ready(function ()
                                         }
                                         $.ajax({
                                             type: "POST",
-                                            url: residence + '/CheckRecurringProfile.php',
+                                            url: residence + 'CheckRecurringProfile.php',
                                             data: {
                                                 type: "Check",
                                                 dateFirst: dateFirst,
@@ -1604,7 +1611,7 @@ $(document).ready(function ()
                                         }
                                         $.ajax({
                                             type: "POST",
-                                            url: residence + '/CardRecurringProfile.php',
+                                            url: residence + 'CardRecurringProfile.php',
                                             data: {
                                                 type: "Card",
                                                 dateFirst: dateFirst,
@@ -1711,7 +1718,7 @@ $(document).ready(function ()
                                                 }
                                                 $.ajax({
                                                     type: "POST",
-                                                    url: residence + '/CheckProfile.php',
+                                                    url: residence + 'CheckProfile.php',
                                                     data: {
                                                         type: "Check",
                                                         date: date_Future,
@@ -1767,7 +1774,7 @@ $(document).ready(function ()
                                                 }
                                                 $.ajax({
                                                     type: "POST",
-                                                    url: residence + '/CardProfile.php',
+                                                    url: residence + 'CardProfile.php',
                                                     data: {
                                                         type: "Card",
                                                         date: date_Future,
@@ -1928,7 +1935,7 @@ $(document).ready(function ()
                                     else count = Math.floor(days / 7);
                                     $.ajax({
                                         type: "POST",
-                                        url: residence + '/CardRecurringProfile.php',
+                                        url: residence + 'CardRecurringProfile.php',
                                         data: {
                                             type: "Card",
                                             dateFirst: dateFirst,
@@ -2028,7 +2035,7 @@ $(document).ready(function ()
                                             alert("Scheduling Your Transaction...\nPlease Wait.");
                                             $.ajax({
                                                 type: "POST",
-                                                url: residence + '/CardProfile.php',
+                                                url: residence + 'CardProfile.php',
                                                 data: {
                                                     type: "Card",
                                                     date: date_Future,
@@ -2175,7 +2182,7 @@ $(document).ready(function ()
                                     } else count = Math.floor(days / 7);
                                     $.ajax({
                                         type: "POST",
-                                        url: residence + '/CheckRecurringProfile.php',
+                                        url: residence + 'CheckRecurringProfile.php',
                                         data: {
                                             type: "Check",
                                             dateFirst: dateFirst,
@@ -2274,7 +2281,7 @@ $(document).ready(function ()
                                             alert("Scheduling Your Transaction...\nPlease Wait.");
                                             $.ajax({
                                                 type: "POST",
-                                                url: residence + '/CheckProfile.php',
+                                                url: residence + 'CheckProfile.php',
                                                 data: {
                                                     type: "Check",
                                                     date: date_Future,
