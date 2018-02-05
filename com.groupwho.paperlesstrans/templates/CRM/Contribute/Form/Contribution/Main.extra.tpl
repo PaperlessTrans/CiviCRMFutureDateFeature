@@ -78,7 +78,7 @@ $(document).ready(function ()
 		{var slash = "\/";}
 		else if (forward == false)
 		{var slash = "\\";}
-		console.log(slash);
+		
         joomla_1 = residence.split(slash + 'media');
         drupal_1 = residence.split(slash + 'sites');
         wordpress_1 = residence.split(slash + 'wp-content');
@@ -100,7 +100,7 @@ $(document).ready(function ()
             server = server_root[server_root.length-1];
             final_residence = slash + server + slash + "wp-content" +wordpress_1[1] + slash;           
         }
-		console.log(final_residence);
+		
         residence = final_residence;
         
         state_id = $('.select2-choice')[1]['childNodes'][1]['id'];
