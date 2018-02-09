@@ -2317,7 +2317,7 @@
 
                 obj_processor = result['values'][0]['payment_processor'];
                 obj_length = result['values'][0]['payment_processor']['length'];
-                console.log(obj_length);
+               
                 counter = 0;
                 paperless_counter = 0;
                 for (var property in obj_processor) {
@@ -2330,7 +2330,7 @@
                         "id": obj_processor[property]
                     }).done(function (result) {
                         counter += 1;
-                        console.log(result['result']);
+                       
 
                         if (result['result'] == 'https://svc.paperlesstrans.com:9999/?wsdl' || result['result'] == 'http://svc.paperlesstrans.com:8888/?wsdl') {
                             paperless_counter += 1;
@@ -4614,4 +4614,3 @@
     });
 </script>
 {/literal}
-
