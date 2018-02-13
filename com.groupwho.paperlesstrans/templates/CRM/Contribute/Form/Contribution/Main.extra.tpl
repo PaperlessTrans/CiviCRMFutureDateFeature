@@ -8,7 +8,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
     var recur_future_contribution = '<br/><div id="recur_future_div"><input id="recur_future_date_checkbox" name="recur_future_date_checkbox" value="1" class="crm-form-checkbox" type="checkbox"/> <label for="recur_future_date_checkbox">I want to start my recurring contribution on this date.</label></div>';
-    var recur_future_date = '<div id="recur_future_date_picker" style="display: none;"><label for="recur_future_start_date">Select Your Start Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input id="recur_future_start_date" class="nine crm-form-text" type="date"/><br/><label for="recur_future_end_date"> Select Your End Date: (Optional) </label><input id="recur_future_end_date" class="nine crm-form-text" type="date" /><div>';
+    var recur_future_date = '<div id="recur_future_date_picker" style="display: none;"><label for="recur_future_start_date">Select Your Start Date:</label><input id="recur_future_start_date" class="nine crm-form-text" type="date"/><br/><label for="recur_future_end_date"> Select Your End Date: </label><input id="recur_future_end_date" class="nine crm-form-text" type="date" /><label> (Optional) </label><div>';
     var one_time_future_contribution = '<br/><legend>One-Time Contribution</legend><br/><div id="one_time_future_div" class="center-div">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="one_time_future_date" name="one_time_future_date" value="1" class="crm-form-checkbox" type="checkbox"/> <label for="one_time_future_date">I want to make a one-time contribution at a future date.</label><br/><br/></div>';
     var one_time_date_picker = '<div id="one_time_date_picker_div" style="display: none;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="one_time_date_picker">Select Your Future Date: </label><input id="one_time_date_picker" class="eight crm-form-text" type="date" /><br/><div>';
     var record_future_transaction = '<input class="crm-form-submit default validate" crm-icon="fa-check" style="display: none;" value="Record Contribution" id="future_transaction" type="button"><input class="crm-form-submit default validate" crm-icon="fa-check" style="display: none;" value="Record Recurring Contribution" id="future_recur_transaction" type="button">';
@@ -510,6 +510,9 @@
                                             }
                                             else if ($("#one_time_future_date").is(':checked')) {
                                                 alert("Performing One-Time Future Contribution.");
+                                                $("#one_time_date_picker_div").show();
+                                                $("#recur_future_date_picker").hide();
+                                                
                                                 $(".crm-i-button").hide();
                                             }
                                             else {
@@ -671,6 +674,8 @@
                                             }
                                             else if ($("#recur_future_date_checkbox").is(':checked')) {
                                                 alert("Performing Recurring Future Contribution.");
+                                                $("#one_time_date_picker_div").hide();
+                                                $("#recur_future_date_picker").show();
                                                 $(".crm-i-button").hide();
                                             }
                                             else {
@@ -887,6 +892,8 @@
                                             }
                                             else if ($("#one_time_future_date").is(':checked')) {
                                                 alert("Performing One-Time Future Contribution.");
+                                                $("#one_time_date_picker_div").show();
+                                                $("#recur_future_date_picker").hide();
                                                 $(".crm-i-button").hide();
                                             }
                                             else {
@@ -1047,6 +1054,8 @@
                                             }
                                             else if ($("#recur_future_date_checkbox").is(':checked')) {
                                                 alert("Performing Recurring Future Contribution.");
+                                                $("#one_time_date_picker_div").hide();
+                                                $("#recur_future_date_picker").show();
                                                 $(".crm-i-button").hide();
                                             }
                                             else {
@@ -1276,6 +1285,9 @@
                                             }
                                             else if ($("#one_time_future_date").is(':checked')) {
                                                 alert("Performing One-Time Future Contribution.");
+                                                $("#one_time_date_picker_div").show();
+                                                $("#recur_future_date_picker").hide();
+                                                
                                                 $(".crm-i-button").hide();
                                             }
                                             else {
@@ -1434,6 +1446,8 @@
                                             }
                                             else if ($("#recur_future_date_checkbox").is(':checked')) {
                                                 alert("Performing Recurring Future Contribution.");
+                                                $("#one_time_date_picker_div").hide();
+                                                $("#recur_future_date_picker").show();
                                                 $(".crm-i-button").hide();
                                             }
                                             else {
@@ -1646,6 +1660,9 @@
                                             }
                                             else if ($("#one_time_future_date").is(':checked')) {
                                                 alert("Performing One-Time Future Contribution.");
+                                                $("#one_time_date_picker_div").show();
+                                                $("#recur_future_date_picker").hide();
+                                                
                                                 $(".crm-i-button").hide();
                                             }
                                             else {
@@ -1804,6 +1821,8 @@
                                             }
                                             else if ($("#recur_future_date_checkbox").is(':checked')) {
                                                 alert("Performing Recurring Future Contribution.");
+                                                $("#one_time_date_picker_div").hide();
+                                                $("#recur_future_date_picker").show();
                                                 $(".crm-i-button").hide();
                                             }
                                             else {
@@ -1958,6 +1977,9 @@
                                             }
                                             else if ($("#one_time_future_date").is(':checked')) {
                                                 alert("Performing One-Time Future Contribution.");
+                                                $("#one_time_date_picker_div").show();
+                                                $("#recur_future_date_picker").hide();
+                                                
                                                 $(".crm-i-button").hide();
                                             }
                                             else {
@@ -2052,6 +2074,8 @@
                                             }
                                             else if ($("#recur_future_date_checkbox").is(':checked')) {
                                                 alert("Performing Recurring Future Contribution.");
+                                                $("#one_time_date_picker_div").hide();
+                                                $("#recur_future_date_picker").show();
                                                 $(".crm-i-button").hide();
                                             }
                                             else {
@@ -2195,6 +2219,9 @@
                                             }
                                             else if ($("#one_time_future_date").is(':checked')) {
                                                 alert("Performing One-Time Future Contribution.");
+                                                $("#one_time_date_picker_div").show();
+                                                $("#recur_future_date_picker").hide();
+                                                
                                                 $(".crm-i-button").hide();
                                             }
                                             else {
@@ -2289,6 +2316,8 @@
                                             }
                                             else if ($("#recur_future_date_checkbox").is(':checked')) {
                                                 alert("Performing Recurring Future Contribution.");
+                                                $("#one_time_date_picker_div").hide();
+                                                $("#recur_future_date_picker").show();
                                                 $(".crm-i-button").hide();
                                             }
                                             else {
@@ -2800,6 +2829,9 @@
                                                 }
                                                 else if ($("#one_time_future_date").is(':checked')) {
                                                     alert("Performing One-Time Future Contribution.");
+                                                    $("#one_time_date_picker_div").show();
+                                                $("#recur_future_date_picker").hide();
+                                                
                                                     $(".crm-i-button").hide();
                                                 }
                                                 else {
@@ -2961,6 +2993,8 @@
                                                 }
                                                 else if ($("#recur_future_date_checkbox").is(':checked')) {
                                                     alert("Performing Recurring Future Contribution.");
+                                                    $("#one_time_date_picker_div").hide();
+                                                $("#recur_future_date_picker").show();
                                                     $(".crm-i-button").hide();
                                                 }
                                                 else {
@@ -3177,6 +3211,9 @@
                                                 }
                                                 else if ($("#one_time_future_date").is(':checked')) {
                                                     alert("Performing One-Time Future Contribution.");
+                                                    $("#one_time_date_picker_div").show();
+                                                $("#recur_future_date_picker").hide();
+                                                
                                                     $(".crm-i-button").hide();
                                                 }
                                                 else {
@@ -3337,6 +3374,8 @@
                                                 }
                                                 else if ($("#recur_future_date_checkbox").is(':checked')) {
                                                     alert("Performing Recurring Future Contribution.");
+                                                    $("#one_time_date_picker_div").hide();
+                                                $("#recur_future_date_picker").show();
                                                     $(".crm-i-button").hide();
                                                 }
                                                 else {
@@ -3566,6 +3605,9 @@
                                                 }
                                                 else if ($("#one_time_future_date").is(':checked')) {
                                                     alert("Performing One-Time Future Contribution.");
+                                                    $("#one_time_date_picker_div").show();
+                                                $("#recur_future_date_picker").hide();
+                                                
                                                     $(".crm-i-button").hide();
                                                 }
                                                 else {
@@ -3724,6 +3766,8 @@
                                                 }
                                                 else if ($("#recur_future_date_checkbox").is(':checked')) {
                                                     alert("Performing Recurring Future Contribution.");
+                                                    $("#one_time_date_picker_div").hide();
+                                                $("#recur_future_date_picker").show();
                                                     $(".crm-i-button").hide();
                                                 }
                                                 else {
@@ -3936,6 +3980,9 @@
                                                 }
                                                 else if ($("#one_time_future_date").is(':checked')) {
                                                     alert("Performing One-Time Future Contribution.");
+                                                    $("#one_time_date_picker_div").show();
+                                                $("#recur_future_date_picker").hide();
+                                                
                                                     $(".crm-i-button").hide();
                                                 }
                                                 else {
@@ -4094,6 +4141,8 @@
                                                 }
                                                 else if ($("#recur_future_date_checkbox").is(':checked')) {
                                                     alert("Performing Recurring Future Contribution.");
+                                                    $("#one_time_date_picker_div").hide();
+                                                $("#recur_future_date_picker").show();
                                                     $(".crm-i-button").hide();
                                                 }
                                                 else {
@@ -4248,6 +4297,9 @@
                                                 }
                                                 else if ($("#one_time_future_date").is(':checked')) {
                                                     alert("Performing One-Time Future Contribution.");
+                                                    $("#one_time_date_picker_div").show();
+                                                $("#recur_future_date_picker").hide();
+                                                
                                                     $(".crm-i-button").hide();
                                                 }
                                                 else {
@@ -4342,6 +4394,8 @@
                                                 }
                                                 else if ($("#recur_future_date_checkbox").is(':checked')) {
                                                     alert("Performing Recurring Future Contribution.");
+                                                    $("#one_time_date_picker_div").hide();
+                                                $("#recur_future_date_picker").show();
                                                     $(".crm-i-button").hide();
                                                 }
                                                 else {
@@ -4485,6 +4539,9 @@
                                                 }
                                                 else if ($("#one_time_future_date").is(':checked')) {
                                                     alert("Performing One-Time Future Contribution.");
+                                                    $("#one_time_date_picker_div").show();
+                                                $("#recur_future_date_picker").hide();
+                                                
                                                     $(".crm-i-button").hide();
                                                 }
                                                 else {
@@ -4579,6 +4636,8 @@
                                                 }
                                                 else if ($("#recur_future_date_checkbox").is(':checked')) {
                                                     alert("Performing Recurring Future Contribution.");
+                                                    $("#one_time_date_picker_div").hide();
+                                                $("#recur_future_date_picker").show();
                                                     $(".crm-i-button").hide();
                                                 }
                                                 else {
