@@ -14,8 +14,6 @@
     var record_future_transaction = '<input class="crm-form-submit default validate" crm-icon="fa-check" style="display: none;" value="Record Contribution" id="future_transaction" type="button"><input class="crm-form-submit default validate" crm-icon="fa-check" style="display: none;" value="Record Recurring Contribution" id="future_recur_transaction" type="button">';
     var recur_future_contribution_header = '<legend>Recurring Contribution</legend>';
 
-    var paperless_logo = '<img src="http://www.paperlesstrans.com/wp-content/themes/paperless/images/logo.jpg" alt="Paperless Transaction Corporation Logo" align="middle">';
-
     $(document).ready(function () {
 
         pro = $('input[name=entryURL]').val();
@@ -45,7 +43,6 @@
                 }).done(function (result) {
                     if (result['result'] == 'https://svc.paperlesstrans.com:9999/?wsdl' || result['result'] == 'http://svc.paperlesstrans.com:8888/?wsdl')
                     {
-                        $("#intro_text").before(paperless_logo);
                         $("#recurHelp").append(recur_future_contribution);
                         $("#recur_future_div").append(recur_future_date);
                         $("#priceset-div").after(one_time_future_contribution);
@@ -122,9 +119,6 @@
                             }
 
                             residence = final_residence;
-
-                            state_id = $('.select2-choice')[1]['childNodes'][1]['id'];
-                            state_value = $('#' + state_id).html();
 
                             function abbrState(input, to) {
 
@@ -210,7 +204,7 @@
                                     }
                                 }
                             }
-                            state = abbrState(state_value, 'abbr');
+                                                
 
                             if (!mode == true) {
                                 mode = "Live";
@@ -2338,7 +2332,6 @@
                         }
                         if (counter == obj_length && paperless_counter != 0)
                         {
-                            $("#intro_text").before(paperless_logo);
                             $("#recurHelp").append(recur_future_contribution);
                             $("#recur_future_div").append(recur_future_date);
                             $("#priceset-div").after(one_time_future_contribution);
@@ -2416,8 +2409,7 @@
 
                                 residence = final_residence;
 
-                                state_id = $('.select2-choice')[1]['childNodes'][1]['id'];
-                                state_value = $('#' + state_id).html();
+                                
 
                                 function abbrState(input, to) {
 
@@ -2503,8 +2495,7 @@
                                         }
                                     }
                                 }
-                                state = abbrState(state_value, 'abbr');
-
+                                
                                 if (!mode == true) {
                                     mode = "Live";
                                 }
